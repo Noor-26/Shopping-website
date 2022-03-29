@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cards.css'
-const Cards = props => {
-    const {id,categoroy,img,name,stock,quantity,price,ratings,seller}=props.data
+const Cards = ({data,showCart}) => {
+    const {id,categoroy,img,name,stock,quantity,price,ratings,seller}=data
     return (
     <div className="col">
       <div className="card h-100">
@@ -15,7 +15,7 @@ const Cards = props => {
         <p>ratings : {ratings}</p>
         </div>
         <div className="mx-auto my-2">
-        <button className="btn btn-info text-white">Add to cart</button>
+        <button className="btn btn-info text-white" onClick={() => showCart(data)}>Add to cart</button>
         </div>
       </div>
     </div>
